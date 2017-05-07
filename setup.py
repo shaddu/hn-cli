@@ -7,7 +7,7 @@ from subprocess import call
 
 from setuptools import Command, find_packages, setup
 
-from skele import __version__
+from hn import __version__
 
 
 this_dir = abspath(dirname(__file__))
@@ -28,7 +28,7 @@ class RunTests(Command):
 
     def run(self):
         """Run all tests!"""
-        errno = call(['py.test', '--cov=skele', '--cov-report=term-missing'])
+        errno = call(['py.test', '--cov=hn', '--cov-report=term-missing'])
         raise SystemExit(errno)
 
 
@@ -49,7 +49,7 @@ setup(
     },
     entry_points = {
         'console_scripts': [
-            'skele=skele.cli:main',
+            'hn=hn.cli:main',
         ],
     },
     cmdclass = {'test': RunTests},
