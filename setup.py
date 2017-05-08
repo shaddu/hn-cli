@@ -49,7 +49,7 @@ setup(
     },
     entry_points = {
         'console_scripts': [
-            'hn=hn.cli:main',
+            'hn = hn.cli:main',
         ],
     },
     cmdclass = {'test': RunTests},
